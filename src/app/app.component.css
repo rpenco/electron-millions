@@ -1,0 +1,4 @@
+.container-fluid{
+  background: #EEE;
+  min-height: calc(100vh - 54px);
+}

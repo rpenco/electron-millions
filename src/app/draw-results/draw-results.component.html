@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-12 action-bar">
+    <button (click)="update()" class="btn btn-outline-primary">Recharger</button>
+    <!--<button (click)="save()" class="btn btn-outline-success">Enregistrer</button>-->
+  </div>
+</div>
+
+<div class="row">
+  <div *ngFor="let draw of draws" class="col-sm-6">
+    <app-draw [draw]="draw"></app-draw>
+  </div>
+</div>

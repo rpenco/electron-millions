@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-block" [class.winner]="draw.matchMyDraws.length > 0">
+    <h4 class="card-title">Résultat du {{draw.pubDate | date}} {{draw.jackpots.current | money}}</h4>
+    <ul class="balls">
+      <li *ngFor="let num of draw.numbers" class="ball">{{num}}</li>
+    </ul>
+    <ul class="stars">
+      <li *ngFor="let star of draw.stars" class="star">{{star}}</li>
+    </ul>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngIf="draw.matchMyDraws.length > 0" class="list-group-item winner">
+      <span >☆☆☆ Vous avez gagné {{draw.jackpots.win | money}}! ☆☆☆</span>&nbsp;
+    </li>
+    <li *ngIf="draw.matchMyDraws.length === 0" class="list-group-item">
+      <span *ngIf="draw.jackpots.win > 0">Le jackpot de {{draw.jackpots.win | money}} a été remporté!</span>&nbsp;
+    </li>
+    <li *ngIf="draw.matchMyDraws.length === 0" class="list-group-item">
+      <span *ngIf="draw.jackpots.next > 0">Prochain jackpot de {{draw.jackpots.next | money}}</span>&nbsp;
+    </li>
+  </ul>
+</div>

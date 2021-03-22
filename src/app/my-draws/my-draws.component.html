@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-sm-12 action-bar">
+    <button (click)="add()" class="btn btn-outline-primary">Ajouter une grille</button>
+    <button (click)="save()" class="btn btn-outline-success">Enregistrer</button>
+  </div>
+</div>
+
+<div class="row">
+  <div *ngFor="let draw of myDraws; let i = index" class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><input type="text" [ngModel]="draw.title" (ngModelChange)="draw.title = $event"
+                                      placeholder="Titre de la grille"></h4>
+        <ul class="balls">
+          <li class="ball">
+            <input type="number" [ngModel]="draw.numbers[0]" (ngModelChange)="draw.numbers[0] = $event"
+                   value="{{draw.numbers[0]}}" min="1" max="40" placeholder="-">
+          </li>
+          <li class="ball">
+            <input type="number" [ngModel]="draw.numbers[1]" (ngModelChange)="draw.numbers[1] = $event"
+                   value="{{draw.numbers[1]}}" min="1" max="40" placeholder="-">
+          </li>
+          <li class="ball">
+            <input type="number" [ngModel]="draw.numbers[2]" (ngModelChange)="draw.numbers[2] = $event"
+                   value="{{draw.numbers[2]}}" min="1" max="40" placeholder="-">
+          </li>
+          <li class="ball">
+            <input type="number" [ngModel]="draw.numbers[3]" (ngModelChange)="draw.numbers[3] = $event"
+                   value="{{draw.numbers[3]}}" min="1" max="40" placeholder="-">
+          </li>
+          <li class="ball">
+            <input type="number" [ngModel]="draw.numbers[4]" (ngModelChange)="draw.numbers[4] = $event"
+                   value="{{draw.numbers[4]}}" min="1" max="40" placeholder="-">
+          </li>
+        </ul>
+        <ul class="stars">
+          <li class="star">
+            <input type="number" [ngModel]="draw.stars[0]" (ngModelChange)="draw.stars[0] = $event"
+                   value="{{draw.stars[0]}}" min="1" max="12" placeholder="-">
+          </li>
+          <li class="star">
+            <input type="number" [ngModel]="draw.stars[1]" (ngModelChange)="draw.stars[1] = $event"
+                   value="{{draw.stars[1]}}" min="1" max="12" placeholder="-">
+          </li>
+        </ul>
+      </div>
+      <div class="card card-block text-xs-center">
+        <button (click)="clean(draw)" class="btn btn-secondary card-link">Effacer</button>
+        <button (click)="remove(i)" class="btn btn-danger card-link">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>

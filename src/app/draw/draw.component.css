@@ -1,0 +1,46 @@
+
+.card-block{
+  text-align: center;
+}
+
+.balls, .stars {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.balls .ball {
+  background: cornflowerblue;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 26px;
+  color: #FFF;
+  padding: 7px;
+  margin: 5px;
+  width: 52px;
+  display: inline-block;
+  text-align: center;
+}
+
+.stars .star {
+  background: orange;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 26px;
+  color: #FFF;
+  padding: 7px;
+  margin: 5px;
+  width: 52px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.winner{
+  background: goldenrod;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  font-size: 22px;
+}

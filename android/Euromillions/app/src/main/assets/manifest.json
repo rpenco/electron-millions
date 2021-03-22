@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Euromillions Extension",
+  "short_name": "Consulter les derniers résultats Euromillions!",
+  "description": "Consulter les derniers résultats Euromillions!",
+  "version": "1.0.0",
+  "author": "rpenco PENCO rpenco@github",
+
+  "browser_action": {
+    "default_title": "Open a new tab to view your bookmarks.",
+    "default_popup": "index.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "page": "index.html",
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": ["activeTab"]
+
+}
